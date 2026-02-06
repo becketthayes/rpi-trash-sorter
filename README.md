@@ -6,7 +6,7 @@ This project uses a Raspberry Pi with computer vision to classify items as **tra
 - Planning to use a MobileNet-based classifier  
 - Hardware and model integration work in progress  
 
-# Dataset (potentially)
+## Dataset (potentially)
 - [Kaggle Garbage Dataset](https://www.kaggle.com/datasets/sumn2u/garbage-classification-v2)
 
 ## Planned Features
