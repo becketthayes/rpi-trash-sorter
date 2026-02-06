@@ -1,0 +1,1 @@
+# rpi-trash-sorter
