@@ -2,7 +2,7 @@
 
 from ultralytics import YOLO
 
-model = YOLO("model/best.pt")
+model = YOLO("best.pt")
 
 RECYCLING_CLASSES = ["cardboard", "glass", "metal", "paper", "plastic"]
 TRASH_CLASSES = ["Trash"]
@@ -18,8 +18,12 @@ def get_bin_category(frame):
     class_name = model.names[class_id]
     confidence = float(best_detection.conf[0].item())
 
-    if confidence < 0.60:
+    if confidence < 0.70:
         return None 
+
+    # --- THE FIX: Completely ignore the cardboard class ---
+    if class_name == "cardboard":
+        return None
 
     print(f"AI Detected: {class_name} ({confidence:.1%} confident)")
 
